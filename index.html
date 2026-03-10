@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedGRPO — CVPR 2026</title>
+  <link rel="stylesheet" href="static/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="conference-badge">CVPR 2026</div>
+
+    <h1 class="paper-title">
+      MedGRPO: Multi-Task Reinforcement Learning<br>
+      for Heterogeneous Medical Video Understanding
+    </h1>
+
+    <div class="authors">
+      <span>Yuhao Su<sup>1,2</sup></span>,
+      <span>Anwesa Choudhuri<sup>2</sup></span>,
+      <span>Zhongpai Gao<sup>2</sup></span>,
+      <span>Benjamin Planche<sup>2</sup></span>,
+      <span>Van Nguyen Nguyen<sup>2</sup></span>,
+      <span>Meng Zheng<sup>2</sup></span>,
+      <span>Yuhan Shen<sup>2</sup></span>,
+      <span>Arun Innanje<sup>2</sup></span>,
+      <span>Terrence Chen<sup>2</sup></span>,
+      <span>Ehsan Elhamifar<sup>1</sup></span>,
+      <span>Ziyan Wu<sup>2</sup></span>
+    </div>
+
+    <div class="affiliations">
+      <span><sup>1</sup>Northeastern University</span>
+      &nbsp;&nbsp;
+      <span><sup>2</sup>United Imaging Intelligence</span>
+    </div>
+
+    <div class="links">
+      <a href="https://arxiv.org/abs/2512.06581" class="btn btn-primary" target="_blank">
+        <i class="fas fa-file-pdf"></i> Paper
+      </a>
+      <a href="https://github.com/Gaozhongpai/MedGRPO" class="btn btn-dark" target="_blank">
+        <i class="fab fa-github"></i> Code
+      </a>
+      <a href="https://huggingface.co/UIIAmerica/Qwen2.5-VL-7B-MedGRPO" class="btn btn-yellow" target="_blank">
+        <i class="fas fa-robot"></i> Model
+      </a>
+      <a href="https://huggingface.co/datasets/UIIAmerica/MedVidBench" class="btn btn-green" target="_blank">
+        <i class="fas fa-database"></i> Dataset
+      </a>
+      <a href="https://huggingface.co/spaces/UIIAmerica/MedVidBench-Leaderboard" class="btn btn-purple" target="_blank">
+        <i class="fas fa-trophy"></i> Leaderboard
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser Figure -->
+<section class="teaser">
+  <div class="container">
+    <div class="teaser-placeholder">
+      <i class="fas fa-image"></i>
+      <p>Teaser Figure</p>
+      <span>Replace with your teaser image: static/images/teaser.png</span>
+    </div>
+    <!-- Uncomment after adding image: -->
+    <!-- <img src="static/images/teaser.png" alt="MedGRPO Overview" /> -->
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container narrow">
+    <h2 class="section-title">Abstract</h2>
+    <p class="abstract-text">
+      Large vision-language models struggle with medical video understanding, where spatial precision,
+      temporal reasoning, and clinical semantics are critical. To address this, we first introduce
+      <strong>MedVidBench</strong>, a large-scale benchmark of <strong>531,850 video-instruction pairs</strong>
+      across 8 medical sources spanning video, segment, and frame-level tasks, curated through a rigorous
+      quality assurance pipeline with expert-guided prompting and dual-model validation.
+    </p>
+    <p class="abstract-text">
+      While supervised fine-tuning on MedVidBench improves performance, we show that further applying
+      group relative policy optimization (GRPO) yields consistent additional gains. To handle the
+      heterogeneity of medical video tasks — each requiring distinct reward signals — we design
+      <strong>task-specific reward functions</strong> with logistic normalization for structured tasks
+      (temporal localization, spatiotemporal grounding) and semantic similarity for open-ended tasks
+      (video summarization, region captioning).
+    </p>
+    <p class="abstract-text">
+      Our two-stage pipeline (SFT + GRPO) trains a single model that achieves strong performance
+      across all tasks, demonstrating the effectiveness of reinforcement learning for heterogeneous
+      medical video understanding.
+    </p>
+  </div>
+</section>
+
+<!-- Pipeline Overview -->
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Method Overview</h2>
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-icon"><i class="fas fa-database"></i></div>
+        <h3>MedVidBench</h3>
+        <p>531,850 video-instruction pairs across 8 medical sources. Covers video-, segment-, and frame-level tasks with expert-guided QA generation.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Stage 1: SFT</h3>
+        <p>Supervised fine-tuning of Qwen2.5-VL-7B on MedVidBench to build a strong medical video baseline.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon"><i class="fas fa-brain"></i></div>
+        <h3>Stage 2: GRPO</h3>
+        <p>Group Relative Policy Optimization with task-specific reward functions. Logistic normalization for structured tasks, semantic similarity for open-ended tasks.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Multi-Task Rewards</h3>
+        <p>Heterogeneous reward design: TAL/STG use logistic-normalized IoU; Video Summary/Region Caption use SentenceBERT semantic similarity.</p>
+      </div>
+    </div>
+
+    <div class="pipeline-figure">
+      <div class="pipeline-placeholder">
+        <i class="fas fa-image"></i>
+        <p>Pipeline Figure</p>
+        <span>Replace with your pipeline image: static/images/pipeline.png</span>
+      </div>
+      <!-- Uncomment after adding image: -->
+      <!-- <img src="static/images/pipeline.png" alt="MedGRPO Pipeline" /> -->
+    </div>
+  </div>
+</section>
+
+<!-- MedVidBench Dataset -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">MedVidBench</h2>
+    <p class="section-subtitle">A comprehensive benchmark for medical video understanding</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">531,850</div>
+        <div class="stat-label">Video-Instruction Pairs</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">8</div>
+        <div class="stat-label">Medical Data Sources</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">8</div>
+        <div class="stat-label">Task Types</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Granularity Levels</div>
+      </div>
+    </div>
+
+    <div class="tasks-grid">
+      <div class="task-tag">Temporal Action Localization</div>
+      <div class="task-tag">Spatiotemporal Grounding</div>
+      <div class="task-tag">Video Summary</div>
+      <div class="task-tag">Region Caption</div>
+      <div class="task-tag">Dense Captioning</div>
+      <div class="task-tag">Next Action Prediction</div>
+      <div class="task-tag">Skill Assessment</div>
+      <div class="task-tag">CVS Assessment</div>
+    </div>
+  </div>
+</section>
+
+<!-- Results -->
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Results</h2>
+    <p class="section-subtitle">MedGRPO achieves consistent gains over SFT baseline across all tasks</p>
+
+    <div class="results-placeholder">
+      <i class="fas fa-table"></i>
+      <p>Results Table</p>
+      <span>Replace with your results table image: static/images/results.png</span>
+    </div>
+    <!-- Uncomment after adding image: -->
+    <!-- <img src="static/images/results.png" alt="Results" class="results-img" /> -->
+  </div>
+</section>
+
+<!-- Citation -->
+<section class="section">
+  <div class="container narrow">
+    <h2 class="section-title">Citation</h2>
+    <div class="citation-box">
+      <button class="copy-btn" onclick="copyCitation()">
+        <i class="fas fa-copy"></i> Copy
+      </button>
+      <pre id="citation-text">@inproceedings{su2026medgrpo,
+  title={{MedGRPO}: Multi-Task Reinforcement Learning for
+         Heterogeneous Medical Video Understanding},
+  author={Su, Yuhao and Choudhuri, Anwesa and Gao, Zhongpai and
+          Planche, Benjamin and Nguyen, Van Nguyen and Zheng, Meng and
+          Shen, Yuhan and Innanje, Arun and Chen, Terrence and
+          Elhamifar, Ehsan and Wu, Ziyan},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer
+             Vision and Pattern Recognition (CVPR)},
+  year={2026}
+}</pre>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>
+      <a href="https://arxiv.org/abs/2512.06581" target="_blank">Paper</a> ·
+      <a href="https://github.com/Gaozhongpai/MedGRPO" target="_blank">Code</a> ·
+      <a href="https://huggingface.co/UIIAmerica/Qwen2.5-VL-7B-MedGRPO" target="_blank">Model</a> ·
+      <a href="https://huggingface.co/datasets/UIIAmerica/MedVidBench" target="_blank">Dataset</a> ·
+      <a href="https://huggingface.co/spaces/UIIAmerica/MedVidBench-Leaderboard" target="_blank">Leaderboard</a>
+    </p>
+    <p class="footer-note">Website template inspired by academic project pages. CVPR 2026.</p>
+  </div>
+</footer>
+
+<script src="static/js/main.js"></script>
+</body>
+</html>
