@@ -79,7 +79,7 @@ body {
 
 .authors {
   font-size: 1rem;
-  color: #cbd5e1;
+  color: #f1f5f9;
   margin-bottom: 0.5rem;
   line-height: 1.8;
 }
@@ -90,12 +90,13 @@ body {
 }
 
 .authors a {
-  color: #cbd5e1;
+  color: #f1f5f9;
   text-decoration: none;
+  border-bottom: 1px solid rgba(241, 245, 249, 0.4);
 }
 
 .authors a:hover {
-  text-decoration: underline;
+  border-bottom-color: #f1f5f9;
 }
 
 .affiliations {
