@@ -369,6 +369,62 @@ body {
   box-shadow: 0 2px 16px rgba(0,0,0,0.07);
 }
 
+/* ---- Results Table ---- */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.results-table th,
+.results-table td {
+  padding: 0.55rem 0.7rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.results-table thead th {
+  background: #1e293b;
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.results-table thead tr:first-child th {
+  border-bottom: 1px solid #334155;
+}
+
+.results-table .group-header {
+  border-left: 1px solid #334155;
+}
+
+.results-table .model-name {
+  text-align: left;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  padding-left: 1rem;
+}
+
+.results-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.results-table .section-divider td {
+  border-top: 2px solid #cbd5e1;
+}
+
+.results-table .rank1 {
+  background: #fee2e2;
+  color: #991b1b;
+  font-weight: 600;
+}
+
+.results-table .rank2 {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
 /* ---- Citation ---- */
 .citation-box {
   position: relative;
