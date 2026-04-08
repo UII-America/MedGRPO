@@ -51,6 +51,9 @@
         <i class="fas fa-robot"></i> Model (Coming Soon)
       </span>
       <span class="btn btn-green" style="opacity: 0.6; cursor: default; pointer-events: none;">
+        <i class="fas fa-play-circle"></i> Demo (Coming Soon)
+      </span>
+      <span class="btn btn-green" style="opacity: 0.6; cursor: default; pointer-events: none;">
         <i class="fas fa-database"></i> Benchmark (Coming Soon)
       </span>
       <span class="btn btn-purple" style="opacity: 0.6; cursor: default; pointer-events: none;">
@@ -289,62 +292,90 @@
             <th>STG<sub>mIoU</sub></th>
             <th>TAG<sub>@0.3</sub></th>
             <th>TAG<sub>@0.5</sub></th>
-            <th>DVC<sub>llm</sub></th>
             <th>DVC<sub>F1</sub></th>
+            <th>DVC<sub>llm</sub></th>
             <th>VS<sub>llm</sub></th>
             <th>RC<sub>llm</sub></th>
           </tr>
         </thead>
         <tbody>
+          <!-- 2025 Off-the-shelf Baselines -->
+          <tr class="section-header"><td colspan="11">2025 Off-the-shelf Baselines</td></tr>
           <tr>
             <td class="model-name">GPT-4.1</td>
             <td>0.018</td><td>0.250</td><td>0.087</td><td>0.014</td>
-            <td>0.096</td><td>0.005</td><td>2.438</td><td>0.101</td><td>2.490</td><td>2.080</td>
+            <td>0.096</td><td>0.005</td><td>0.101</td><td>2.438</td><td>2.490</td><td>2.080</td>
           </tr>
           <tr>
             <td class="model-name">Gemini-2.5-Flash</td>
             <td>0.101</td><td>0.228</td><td>0.107</td><td>0.047</td>
-            <td>0.045</td><td>0.021</td><td>2.387</td><td>0.084</td><td>2.352</td><td>1.912</td>
+            <td>0.045</td><td>0.021</td><td>0.084</td><td>2.387</td><td>2.352</td><td>1.912</td>
           </tr>
           <tr>
             <td class="model-name">VideoChat-R1.5-7B</td>
             <td>0.000</td><td>0.270</td><td>0.006</td><td>0.000</td>
-            <td>0.009</td><td>0.005</td><td>1.723</td><td>0.026</td><td>3.034</td><td>3.086</td>
+            <td>0.009</td><td>0.005</td><td>0.026</td><td>1.723</td><td>3.034</td><td>3.086</td>
           </tr>
-          <tr class="section-divider">
+          <!-- 2025 Qwen2.5VL-7B -->
+          <tr class="section-header"><td colspan="11">2025 Qwen2.5VL-7B</td></tr>
+          <tr>
             <td class="model-name">Qwen2.5VL-7B</td>
             <td>0.105</td><td>0.151</td><td>0.010</td><td>0.020</td>
-            <td>0.006</td><td>0.068</td><td>2.512</td><td>0.075</td><td>2.452</td><td>2.090</td>
+            <td>0.006</td><td>0.068</td><td>0.075</td><td>2.512</td><td>2.452</td><td>2.090</td>
           </tr>
           <tr>
             <td class="model-name">Qwen2.5VL-7B<sub>Surg-CholecT50</sub> <span style="color:#94a3b8;">(NVIDIA)</span></td>
             <td>0.000</td><td>0.302</td><td>0.000</td><td>0.000</td>
-            <td>0.019</td><td>0.013</td><td>1.945</td><td>0.051</td><td>2.101</td><td class="rank2">2.986</td>
+            <td>0.019</td><td>0.013</td><td>0.051</td><td>1.945</td><td>2.101</td><td class="rank2">2.986</td>
           </tr>
           <tr class="ours-row">
             <td class="model-name"><strong>Qwen2.5VL-7B<sub>SFT</sub></strong> <span style="color:#94a3b8;">(Ours)</span></td>
             <td class="rank2">0.894</td><td class="rank1">0.442</td><td class="rank2">0.218</td><td class="rank2">0.177</td>
-            <td class="rank2">0.142</td><td class="rank2">0.091</td><td class="rank2">3.665</td><td class="rank2">0.165</td><td class="rank2">3.596</td><td>2.757</td>
+            <td class="rank2">0.142</td><td class="rank2">0.091</td><td class="rank2">0.165</td><td class="rank2">3.665</td><td class="rank2">3.596</td><td>2.757</td>
           </tr>
           <tr class="ours-row">
             <td class="model-name"><strong>Qwen2.5VL-7B<sub>MedGRPO</sub></strong> <span style="color:#94a3b8;">(Ours)</span></td>
-            <td class="rank1">0.914</td><td class="rank2">0.427</td><td class="rank1">0.244</td><td class="rank1">0.202</td>
-            <td class="rank1">0.216</td><td class="rank1">0.156</td><td class="rank1">3.797</td><td class="rank1">0.210</td><td class="rank1">4.184</td><td class="rank1">3.442</td>
+            <td class="rank1">0.896</td><td class="rank2">0.405</td><td class="rank1">0.254</td><td class="rank1">0.202</td>
+            <td class="rank1">0.216</td><td class="rank1">0.156</td><td class="rank1">0.214</td><td class="rank1">3.797</td><td class="rank1">4.184</td><td class="rank1">3.442</td>
           </tr>
-          <tr class="section-divider">
+          <!-- 2025 Qwen3-VL-4B -->
+          <tr class="section-header"><td colspan="11">2025 Qwen3-VL-4B</td></tr>
+          <tr>
             <td class="model-name">Qwen3VL-4B</td>
             <td>0.000</td><td>0.178</td><td>0.006</td><td>0.000</td>
-            <td>0.039</td><td>0.034</td><td>1.939</td><td>0.128</td><td>2.926</td><td>2.853</td>
+            <td>0.039</td><td>0.034</td><td>0.128</td><td>1.939</td><td>2.926</td><td>2.853</td>
           </tr>
           <tr class="ours-row">
             <td class="model-name"><strong>Qwen3VL-4B<sub>SFT</sub></strong> <span style="color:#94a3b8;">(Ours)</span></td>
-            <td class="rank2">0.895</td><td class="rank2">0.466</td><td class="rank2">0.270</td><td class="rank2">0.170</td>
-            <td class="rank2">0.465</td><td class="rank2">0.403</td><td class="rank2">3.862</td><td class="rank2">0.435</td><td class="rank2">4.180</td><td class="rank2">3.752</td>
+            <td class="rank2">0.895</td><td class="rank2">0.466</td><td class="rank2">0.270</td><td class="rank2">0.133</td>
+            <td class="rank2">0.465</td><td class="rank2">0.403</td><td class="rank2">0.435</td><td class="rank2">3.862</td><td class="rank2">4.180</td><td class="rank2">3.752</td>
           </tr>
           <tr class="ours-row">
             <td class="model-name"><strong>Qwen3VL-4B<sub>MedGRPO</sub></strong> <span style="color:#94a3b8;">(Ours)</span></td>
-            <td class="rank1">0.898</td><td class="rank1">0.473</td><td class="rank1">0.285</td><td class="rank1">0.212</td>
-            <td class="rank1">0.504</td><td class="rank1">0.441</td><td class="rank1">3.950</td><td class="rank1">0.491</td><td class="rank1">4.227</td><td class="rank1">3.861</td>
+            <td class="rank1">0.898</td><td class="rank1">0.473</td><td class="rank1">0.285</td><td class="rank1">0.176</td>
+            <td class="rank1">0.504</td><td class="rank1">0.441</td><td class="rank1">0.480</td><td class="rank1">3.950</td><td class="rank1">4.227</td><td class="rank1">3.861</td>
+          </tr>
+          <!-- 2026 Off-the-shelf Baselines & Qwen3.5-4B -->
+          <tr class="section-header"><td colspan="11">2026 Off-the-shelf Baselines &amp; Qwen3.5-4B</td></tr>
+          <tr>
+            <td class="model-name">GPT-5.4</td>
+            <td>0.164</td><td>0.393</td><td>0.267</td><td>0.004</td>
+            <td>0.086</td><td>0.055</td><td>0.178</td><td>3.403</td><td>3.976</td><td>3.714</td>
+          </tr>
+          <tr>
+            <td class="model-name">Gemini-3.1-flash-lite</td>
+            <td>0.242</td><td>0.406</td><td>0.225</td><td>0.059</td>
+            <td>0.072</td><td>0.049</td><td>0.174</td><td>3.198</td><td>3.737</td><td>3.492</td>
+          </tr>
+          <tr>
+            <td class="model-name">Qwen3.5-4B</td>
+            <td>0.309</td><td>0.231</td><td>0.276</td><td>0.051</td>
+            <td>0.074</td><td>0.040</td><td>0.142</td><td>2.699</td><td>3.491</td><td>3.037</td>
+          </tr>
+          <tr class="ours-row">
+            <td class="model-name"><strong>Qwen3.5-4B<sub>SFT</sub></strong> <span style="color:#94a3b8;">(Ours)</span></td>
+            <td class="rank1">0.897</td><td class="rank1">0.576</td><td class="rank1">0.354</td><td class="rank1">0.190</td>
+            <td class="rank1">0.482</td><td class="rank1">0.429</td><td class="rank1">0.451</td><td class="rank1">3.741</td><td class="rank1">4.238</td><td class="rank1">3.746</td>
           </tr>
         </tbody>
       </table>
@@ -353,7 +384,7 @@
       <span style="display:inline-block; background:#fee2e2; color:#b91c1c; font-weight:700; padding:0.1rem 0.6rem; border-radius:4px;">■ Best</span>
       &nbsp;
       <span style="display:inline-block; background:#fff7ed; color:#c2410c; padding:0.1rem 0.6rem; border-radius:4px;">■ 2nd Best</span>
-      &nbsp;&nbsp; Accuracy (CVS/NAP/SA) · mIoU (STG/TAG) · LLM Judge (DVC/VS/RC) · F1 (DVC)
+      &nbsp;&nbsp; within each group. Accuracy (CVS/NAP/SA) · mIoU (STG/TAG) · LLM Judge (DVC/VS/RC) · F1 (DVC)
     </p>
   </div>
 </section>
@@ -425,8 +456,9 @@
   <div class="container">
     <p>
       <a href="https://arxiv.org/abs/2512.06581" target="_blank">Paper</a> ·
-      <a href="https://github.com/Gaozhongpai/MedGRPO" target="_blank">Code</a> ·
+      <a href="https://github.com/UII-America/MedGRPO-Code" target="_blank">Code</a> ·
       <a href="https://huggingface.co/UIIAmerica/Qwen2.5-VL-7B-MedGRPO" target="_blank">Model</a> ·
+      <a href="https://huggingface.co/spaces/UIIAmerica/MedGRPO-Demo" target="_blank">Demo</a> ·
       <a href="https://huggingface.co/datasets/UIIAmerica/MedVidBench" target="_blank">Benchmark</a> ·
       <a href="https://huggingface.co/spaces/UIIAmerica/MedVidBench-Leaderboard" target="_blank">Leaderboard</a>
     </p>
