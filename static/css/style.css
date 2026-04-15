@@ -179,6 +179,13 @@ body {
 }
 .btn-green:hover { background: #6ee7b7; }
 
+.btn-teal {
+  background: #ccfbf1;
+  color: #134e4a;
+  border-color: #5eead4;
+}
+.btn-teal:hover { background: #5eead4; }
+
 .btn-purple {
   background: #ede9fe;
   color: #4c1d95;
